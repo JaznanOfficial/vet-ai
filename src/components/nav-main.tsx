@@ -1,6 +1,7 @@
 "use client"
 
 import { type Icon } from "@tabler/icons-react"
+import Link from "next/link"
 
 import {
   SidebarGroup,
@@ -36,14 +37,14 @@ export function NavMain({
                     : "cursor-pointer"
                 }
               >
-                <a href={item.url}>
+                <Link href={item.url}>
                   {item.special ? (
                     <Sparkles className="h-4 w-4" />
                   ) : (
                     item.icon && <item.icon />
                   )}
                   <span>{item.title}</span>
-                </a>
+                </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
           ))}

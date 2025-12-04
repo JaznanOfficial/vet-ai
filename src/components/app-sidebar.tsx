@@ -10,6 +10,7 @@ import {
 } from "@tabler/icons-react"
 
 import { NavMain } from "@/components/nav-main"
+import { NavHistory } from "@/components/nav-history"
 import { NavUser } from "@/components/nav-user"
 import {
   Sidebar,
@@ -20,6 +21,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
+import Link from "next/link"
 
 const data = {
   user: {
@@ -50,6 +52,28 @@ const data = {
       icon: IconCreditCard,
     },
   ],
+  navHistory: [
+    {
+      title: "Dog limping assessment",
+      url: "/chat/1",
+      date: "Today",
+    },
+    {
+      title: "Cat not eating",
+      url: "/chat/2",
+      date: "Yesterday",
+    },
+    {
+      title: "Puppy vaccination schedule",
+      url: "/chat/3",
+      date: "2 days ago",
+    },
+    {
+      title: "Dietary advice for senior dog",
+      url: "/chat/4",
+      date: "Last week",
+    },
+  ],
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -62,16 +86,17 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               asChild
               className="data-[slot=sidebar-menu-button]:!p-1.5 cursor-pointer"
             >
-              <a href="/">
+              <Link href="/">
                 <IconPaw className="!size-5 text-primary" />
                 <span className="text-base font-semibold">Vet AI</span>
-              </a>
+              </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
+        <NavHistory items={data.navHistory} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
