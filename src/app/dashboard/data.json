@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "petName": "Max",
+    "petType": "Dog",
+    "symptoms": "Limping on front left leg",
+    "urgency": "Medium",
+    "status": "Reviewed",
+    "date": "2024-12-03",
+    "owner": "John Doe"
+  },
+  {
+    "id": 2,
+    "petName": "Luna",
+    "petType": "Cat",
+    "symptoms": "Not eating, lethargic",
+    "urgency": "High",
+    "status": "Pending",
+    "date": "2024-12-02",
+    "owner": "Jane Smith"
+  },
+  {
+    "id": 3,
+    "petName": "Charlie",
+    "petType": "Dog",
+    "symptoms": "Mild cough",
+    "urgency": "Low",
+    "status": "Reviewed",
+    "date": "2024-12-01",
+    "owner": "John Doe"
+  },
+  {
+    "id": 4,
+    "petName": "Bella",
+    "petType": "Cat",
+    "symptoms": "Vomiting after meals",
+    "urgency": "Medium",
+    "status": "Reviewed",
+    "date": "2024-11-29",
+    "owner": "Sarah Johnson"
+  },
+  {
+    "id": 5,
+    "petName": "Rocky",
+    "petType": "Dog",
+    "symptoms": "Skin rash on belly",
+    "urgency": "Low",
+    "status": "Reviewed",
+    "date": "2024-11-27",
+    "owner": "Mike Wilson"
+  },
+  {
+    "id": 6,
+    "petName": "Whiskers",
+    "petType": "Cat",
+    "symptoms": "Excessive scratching",
+    "urgency": "Low",
+    "status": "Archived",
+    "date": "2024-11-25",
+    "owner": "Emily Brown"
+  },
+  {
+    "id": 7,
+    "petName": "Buddy",
+    "petType": "Dog",
+    "symptoms": "Diarrhea for 2 days",
+    "urgency": "High",
+    "status": "Reviewed",
+    "date": "2024-11-24",
+    "owner": "John Doe"
+  },
+  {
+    "id": 8,
+    "petName": "Mittens",
+    "petType": "Cat",
+    "symptoms": "Eye discharge",
+    "urgency": "Medium",
+    "status": "Pending",
+    "date": "2024-11-23",
+    "owner": "Lisa Davis"
+  }
+]
