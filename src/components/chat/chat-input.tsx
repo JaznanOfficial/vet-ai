@@ -30,48 +30,52 @@ export function ChatInput({ onSendMessage, isLoading = false }: ChatInputProps) 
 
   return (
     <form onSubmit={handleSubmit} className="border-t bg-background p-4">
-      <div className="flex items-end gap-2">
-        {/* Image upload button */}
-        <Button
-          type="button"
-          variant="outline"
-          size="icon"
-          className="shrink-0"
-          disabled={isLoading}
-        >
-          <ImagePlus className="h-4 w-4" />
-          <span className="sr-only">Upload image</span>
-        </Button>
-
+      {/* Integrated Input Container */}
+      <div className="relative">
         {/* Message input */}
-        <div className="flex-1 relative">
-          <Textarea
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            onKeyDown={handleKeyDown}
-            placeholder="Describe your pet's symptoms..."
-            className="min-h-[60px] max-h-[200px] resize-none pr-12"
-            disabled={isLoading}
-          />
-          <div className="absolute bottom-2 right-2 text-xs text-muted-foreground">
-            {message.length}/2000
-          </div>
+        <Textarea
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          onKeyDown={handleKeyDown}
+          placeholder="Describe your pet's symptoms..."
+          className="min-h-32 max-h-[300px] resize-none pr-24 pb-12 rounded-2xl border-2 focus-visible:ring-2 focus-visible:ring-offset-0 transition-all"
+          disabled={isLoading}
+        />
+        
+        {/* Character count */}
+        <div className="absolute top-3 right-3 text-xs text-muted-foreground/60">
+          {message.length}/2000
         </div>
 
-        {/* Send button */}
-        <Button
-          type="submit"
-          size="icon"
-          className="shrink-0"
-          disabled={!message.trim() || isLoading}
-        >
-          {isLoading ? (
-            <Loader2 className="h-4 w-4 animate-spin" />
-          ) : (
-            <Send className="h-4 w-4" />
-          )}
-          <span className="sr-only">Send message</span>
-        </Button>
+        {/* Action buttons container - positioned at bottom right inside textarea */}
+        <div className="absolute bottom-3 right-3 flex items-center gap-2">
+          {/* Image upload button */}
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            className="h-8 w-8 rounded-full hover:bg-muted transition-colors"
+            disabled={isLoading}
+          >
+            <ImagePlus className="h-4 w-4" />
+            <span className="sr-only">Upload image</span>
+          </Button>
+
+          {/* Send button */}
+          <Button
+            type="submit"
+            size="icon"
+            className="h-8 w-8 rounded-full transition-all hover:scale-105 disabled:opacity-50 disabled:hover:scale-100"
+            disabled={!message.trim() || isLoading}
+          >
+            {isLoading ? (
+              <Loader2 className="h-4 w-4 animate-spin" />
+            ) : (
+              <Send className="h-4 w-4" />
+            )}
+            <span className="sr-only">Send message</span>
+          </Button>
+        </div>
       </div>
       
       <p className="mt-2 text-xs text-muted-foreground">
